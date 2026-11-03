@@ -1,0 +1,90 @@
+import asyncio
+import sys
+
+# Ensure uvloop and event loop are configured BEFORE importing pytgcalls or plugins
+if sys.platform != "win32":
+    try:
+        import uvloop
+        uvloop.install()
+    except (ImportError, Exception):
+        pass
+
+try:
+    loop = asyncio.get_event_loop()
+except RuntimeError:
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+else:
+    if loop.is_closed():
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+
+import importlib
+
+from pyrogram import idle
+from pytgcalls.exceptions import NoActiveGroupCall
+
+import config
+from MusicSp import LOGGER, app, userbot
+from MusicSp.core.call import DevSp
+from MusicSp.misc import sudo, system_check
+from MusicSp.plugins import ALL_MODULES
+from MusicSp.utils.database import get_banned_users, get_gbanned
+from config import BANNED_USERS
+
+
+async def init():
+    if (
+        not config.STRING1
+        and not config.STRING2
+        and not config.STRING3
+        and not config.STRING4
+        and not config.STRING5
+    ):
+        LOGGER(__name__).error("Assistant client variables not defined, exiting...")
+        exit()
+    await sudo()
+    try:
+        users = await get_gbanned()
+        for user_id in users:
+            BANNED_USERS.add(user_id)
+        users = await get_banned_users()
+        for user_id in users:
+            BANNED_USERS.add(user_id)
+    except:
+        pass
+    await app.start()
+    for all_module in ALL_MODULES:
+        importlib.import_module("MusicSp.plugins" + all_module)
+    LOGGER("MusicSp.plugins").info("Successfully Imported Modules...")
+    await userbot.start()
+    await DevSp.start()
+    try:
+        await DevSp.stream_call("https://te.legra.ph/file/29f784eb49d230ab62e9e.mp4")
+    except NoActiveGroupCall:
+        LOGGER("MusicSp").warning(
+            "Videochat not active in log group. Bot is ready to join group voice chats on command."
+        )
+    except Exception:
+        pass
+    await DevSp.decorators()
+    LOGGER("MusicSp").info(
+        "MusicSp Started Successfully.\n\nDon't forget to visit @MusicSp"
+    )
+    try:
+        await system_check()
+    except:
+        pass
+    await idle()
+    await app.stop()
+    await userbot.stop()
+    LOGGER("MusicSp").info("Stopping Devloper Sparrow Bot...")
+
+
+if __name__ == "__main__":
+    try:
+        loop = asyncio.get_event_loop()
+    except RuntimeError:
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+    loop.run_until_complete(init())
