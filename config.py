@@ -11,18 +11,17 @@ API_ID = int(getenv("35196909", "0"))
 API_HASH = getenv("8446eb6c298728f09904eb5d06a811f2", None)
 
 # Get your token from @BotFather on Telegram.
-BOT_TOKEN = getenv("8636061878:AAHPPhkZW1HLDUXFg3KBknr1dN3NyP16Vzo", None)
+BOT_TOKEN = getenv("9101883659:AAGd0tWmuW6dMFmp7nAA04-FLYRxQM9R7wE", None)
 
 # Get your mongo url from cloud.mongodb.com
-MONGO_DB_URI = getenv("MONGO_DB_URI", None)
+MONGO_DB_URI = getenv("mongodb+srv://patanto:11223344@cluster0.ihpibzi.mongodb.net/patanto", None)
 
-DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 1700))
-
+DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 1700)id
 # Chat id of a group for logging bot's activities
 LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "0"))
 
 # Get this value from @MissRose_Bot on Telegram by /id
-OWNER_ID = int(getenv("8882791688", "0"))
+OWNER_ID = int(getenv("2014144404## "0"))
 
 ## Fill these variables if you're deploying on heroku.
 # Your heroku app name
@@ -42,10 +41,8 @@ GIT_TOKEN = getenv(
     "GIT_TOKEN", None
 )  # Fill this variable if your upstream repository is private
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/mu_aslam") 
-SUPPORT_GROUP = getenv("SUPPORT_GROUP", "https://t.me/aslam_musice")
-
-# Set this to True if you want the assistant to automatically leave chats after an interval
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/babylavT) 
+SUPPORT_GROUP = getenv("SUPPORT_GROUP", "https://t.me/babylavthis# Set this to True if you want the assistant to automatically leave chats after an interval
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
 
 # make your bots privacy from telegra.ph and put your url here 
