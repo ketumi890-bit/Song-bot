@@ -34,7 +34,7 @@ MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://parantobaby_db_user:lozXsE0
 
 OWNER_ID = int(getenv("OWNER_ID", "2014144404"))
 
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-5481620689"))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1003932193997))
 
 
 # ==========================================
