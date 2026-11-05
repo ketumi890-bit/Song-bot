@@ -15,8 +15,8 @@ load_dotenv()
 # TELEGRAM API CONFIGURATION
 # ==========================================
 
-API_ID = int(getenv("API_ID", "0"))
-API_HASH = getenv("API_HASH", "")
+API_ID = int(getenv("API_ID", "38897826"))
+API_HASH = getenv("API_HASH", "e44640b6b8de2cf53b002cf02489b2e4")
 
 BOT_TOKEN = getenv("BOT_TOKEN", "9101883659:AAGd0tWmuW6dMFmp7nAA04-FLYRxQM9R7wE")
 
