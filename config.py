@@ -25,7 +25,7 @@ BOT_TOKEN = getenv("BOT_TOKEN", "9101883659:AAGd0tWmuW6dMFmp7nAA04-FLYRxQM9R7wE"
 # MONGODB DATABASE CONFIGURATION
 # ==========================================
 
-MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://temetiger360_db_user:ZVsiJTPn8ylGHLjW@facebooksell.a7bx1ev.mongodb.net/?appName=Facebooksell")
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://parantobaby_db_user:lozXsE0aj7WNu1Nr@cluster0.s5y4dxj.mongodb.net/")
 
 
 # ==========================================
